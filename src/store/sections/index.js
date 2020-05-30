@@ -5,12 +5,6 @@ export default {
   state: () => ({
     sections: data,
   }),
-  mutations: {
-    increment(state, value) {
-      // `state` is the local module state
-      state.count = value;
-    },
-  },
   getters: {
     byId: state => id => {
       return state.sections.find(x => x.id === id) || { name: "" };

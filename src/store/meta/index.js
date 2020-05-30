@@ -3,20 +3,23 @@ import data from "./data.json";
 export default {
   namespaced: true,
   state: () => ({
-    sections: data,
+    meta: data,
   }),
-  mutations: {
-    increment(state, value) {
-      // `state` is the local module state
-      state.count = value;
+  getters: {
+    activeIndex: state => [state.meta.activeIndex][0],
+    selectedSectionId: state => [state.meta.selectedSectionId][0],
+    selectedSection: (_state, getters, rootState) => {
+      return rootState.sections.sections.find(
+        section => section.id === getters.selectedSectionId,
+      )
     },
   },
-  getters: {
-    byId: state => id => {
-      return state.sections.find(x => x.id === id) || { name: "" };
+  mutations: {
+    setActiveIndex(state, index) {
+      state.meta.activeIndex = index
     },
-    sections: state => {
-      return state.sections;
+    setSelectedSectionId(state, sectionId) {
+      state.meta.selectedSection = sectionId
     },
   },
 };
