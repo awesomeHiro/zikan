@@ -30,6 +30,7 @@ module.exports = {
 
     // https://github.com/prettier/eslint-config-prettier#installation
     // usage with Prettier, provided by 'eslint-config-prettier'.
+    'airbnb',
     'prettier',
 
     'prettier/vue'
@@ -58,10 +59,23 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    "prettier/prettier": ["error",{
+      "trailingComma": 'all'
+    }],
     'prefer-promise-reject-errors': 'off',
 
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline"
+      }
+    ]
   }
 }
