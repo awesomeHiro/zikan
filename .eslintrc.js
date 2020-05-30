@@ -59,6 +59,13 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state', // for vuex
+      ]
+    }],
+
     "prettier/prettier": ["error",{
       "trailingComma": 'all'
     }],
