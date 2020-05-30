@@ -1,9 +1,9 @@
-import sections from "./data.json";
+import data from "./data.json";
 
 export default {
   namespaced: true,
   state: () => ({
-    sections,
+    sections: data,
   }),
   mutations: {
     increment(state, value) {

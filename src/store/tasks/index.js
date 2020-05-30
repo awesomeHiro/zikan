@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import today from "./data.json";
+import data from "./data.json";
 
 const tmp = _x => {
   console.log();
@@ -28,7 +28,7 @@ const taskTemplate = {
 export default {
   namespaced: true,
   state: () => ({
-    today,
+    today: data,
   }),
 
   getters: {
