@@ -59,6 +59,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+
     'no-param-reassign': ['error', {
       props: true,
       ignorePropertyModificationsFor: [
@@ -90,5 +91,9 @@ module.exports = {
         "functions": "always-multiline"
       }
     ]
+  },
+
+  "settings": {
+    "import/resolver": "webpack"
   }
 }

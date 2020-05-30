@@ -1,9 +1,6 @@
 import { nanoid } from "nanoid";
 import data from "./data.json";
 
-const tmp = _x => {
-  console.log();
-};
 
 const pad = n => n.toString().padStart(2, 0);
 const min2string = min => `${pad(Math.floor(min / 60))}:${pad(min % 60)}`;
@@ -91,7 +88,6 @@ export default {
       commit("add", newTask);
     },
     updateEstFinishAt({ getters,rootGetters }) {
-      console.log(rootGetters)
       let totalEst = 0;
       this.getters["tasks/sorted"].forEach(x => {
         if (!x.end) {
