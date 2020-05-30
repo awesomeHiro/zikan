@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 // import meta from "./meta";
 // import projects from "./projects";
-// import sections from "./sections";
+import sections from "./sections";
 import tasks from "./tasks";
 
 // import example from './module-example'
@@ -23,7 +23,7 @@ export default function(/* { ssrContext } */) {
     modules: {
       // meta,
       // projects,
-      // sections,
+      sections,
       tasks,
     },
 

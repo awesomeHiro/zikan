@@ -65,7 +65,13 @@ module.exports = {
         'state', // for vuex
       ]
     }],
-
+    "no-unused-vars": ["error", {
+      "argsIgnorePattern": [
+        "^state",
+        "^commit",
+        "^rootState"
+      ] }
+    ],
     "prettier/prettier": ["error",{
       "trailingComma": 'all'
     }],

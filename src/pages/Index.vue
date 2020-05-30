@@ -6,7 +6,7 @@
           <q-input v-model="count" label="Standard" />
         </div>
         <div class="col">
-          .col
+          {{ $store.getters['tasks/sorted'] }}
         </div>
       </div>
 
@@ -14,12 +14,9 @@
         <div class="col">
           {{ count }}
         </div>
-        <div class="col">
-          {{ count }}
-        </div>
-        <div class="col">
-          {{ count }}
-        </div>
+      </div>
+      <div class="col">
+        <!-- {{ $store }} -->
       </div>
     </div>
   </q-page>
@@ -37,6 +34,9 @@ export default {
         this.$store.commit("tasks/increment", val);
       },
     },
+  },
+  created() {
+    console.log(this.$store.getters);
   },
 };
 </script>
