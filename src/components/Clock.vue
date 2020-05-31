@@ -12,27 +12,27 @@
 
 <script>
 export default {
-  name: 'Timer',
+  name: "Timer",
   data() {
     return {
-      time: '00:00:00',
-    }
+      time: "00:00:00",
+    };
   },
   created() {
-    this.updateTime()
+    this.updateTime();
     this.interval = setInterval(() => {
-      this.updateTime()
-    }, 1000)
+      this.updateTime();
+    }, 1000);
   },
   methods: {
     updateTime() {
-      const cd = new Date()
-      const f = time => time.toString().padStart(2, 0)
+      const cd = new Date();
+      const f = time => time.toString().padStart(2, 0);
       this.time =
-        f(cd.getHours()) + ':' + f(cd.getMinutes()) + ':' + f(cd.getSeconds())
+        f(cd.getHours()) + ":" + f(cd.getMinutes()) + ":" + f(cd.getSeconds());
     },
   },
-}
+};
 </script>
 
 <style scoped>

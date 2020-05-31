@@ -23,7 +23,7 @@ export default {
     return {
       selectedSection: [2],
       sections: this.$store.state.sections.sections,
-    }
+    };
   },
-}
+};
 </script>

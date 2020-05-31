@@ -39,7 +39,7 @@ module.exports = {
     __statics: true,
     process: true,
     Capacitor: true,
-    chrome: tru
+    chrome: true,
   },
 
   // add your custom rules here

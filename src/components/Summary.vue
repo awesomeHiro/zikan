@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       sections: this.$store.state.sections.sections,
-    }
+    };
   },
   computed: {
     estimate() {
@@ -69,21 +69,21 @@ export default {
           (total, task) => (total += parseInt(task.estimate)),
           0,
         ),
-      )
+      );
     },
     done() {
       return min2string(
         this.tasks
           .filter(x => x.end)
           .reduce((total, task) => (total += parseInt(task.estimate)), 0),
-      )
+      );
     },
     spent() {
       return min2string(
         this.tasks
           .filter(x => x.end)
           .reduce((total, task) => (total += parseInt(task.result)), 0),
-      )
+      );
     },
     estGap() {
       return this.tasks
@@ -92,30 +92,30 @@ export default {
           (total, task) =>
             (total += parseInt(task.result) - parseInt(task.estimate)),
           0,
-        )
+        );
     },
     left() {
       return min2string(
         this.tasks
           .filter(task => !task.end)
           .reduce((total, task) => (total += parseInt(task.estimate)), 0),
-      )
+      );
     },
     margin() {
       return min2string(
         this.tasks
           .filter(task => !task.end)
           .reduce((total, task) => (total += parseInt(task.estimate)), 0),
-      )
+      );
     },
   },
   methods: {
     min2string(str) {
-      return `${pad(Math.floor(str / 60))}:${pad(str % 60)}`
+      return `${pad(Math.floor(str / 60))}:${pad(str % 60)}`;
     },
   },
-}
+};
 
-const pad = n => n.toString().padStart(2, 0)
-const min2string = str => `${pad(Math.floor(str / 60))}:${pad(str % 60)}`
+const pad = n => n.toString().padStart(2, 0);
+const min2string = str => `${pad(Math.floor(str / 60))}:${pad(str % 60)}`;
 </script>

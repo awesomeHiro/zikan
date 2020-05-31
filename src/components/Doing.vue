@@ -45,7 +45,7 @@
             <v-col cols="1" class="pa-0 ma-0">
               <div class="pa-0 ma-0 subtle--text">
                 <span>
-                  {{ $store.getters['sections/byId'](t.sectionId).name }}
+                  {{ $store.getters["sections/byId"](t.sectionId).name }}
                 </span>
               </div>
             </v-col>
@@ -81,7 +81,7 @@
                   {{
                   0 >= t.result - t.estimate
                     ? t.result - t.estimate
-                    : '+' + (t.result - t.estimate)
+                    : "+" + (t.result - t.estimate)
                 }}
               </div>
             </v-col>
@@ -104,9 +104,9 @@
   </div>
 </template>
 <script>
-import draggable from 'vuedraggable'
-import Summary from 'components/Summary.vue'
-import Clock from 'components/Clock.vue'
+import draggable from "vuedraggable";
+import Summary from "components/Summary.vue";
+import Clock from "components/Clock.vue";
 
 export default {
   components: {
@@ -125,27 +125,27 @@ export default {
       selected: [2],
       sections: this.$store.state.sections.sections,
       projects: this.$store.state.projects.projects,
-    }
+    };
   },
   computed: {
     tasks: {
       get() {
-        return this.$store.getters['tasks/sorted']
+        return this.$store.getters["tasks/sorted"];
       },
       set(payload) {
-        this.$store.dispatch('tasks/updateOrder', payload)
+        this.$store.dispatch("tasks/updateOrder", payload);
       },
     },
   },
   created() {
-    this.calcTasks()
+    this.calcTasks();
   },
   methods: {
     calcTasks() {
-      this.$store.dispatch('tasks/updateEstFinishAt')
+      this.$store.dispatch("tasks/updateEstFinishAt");
     },
   },
-}
+};
 </script>
 <style scoped>
 .footer {

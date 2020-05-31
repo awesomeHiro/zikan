@@ -10,27 +10,27 @@ export default {
   data: () => ({
     days: [
       {
-        date: '27',
+        date: "27",
       },
       {
-        date: '28',
+        date: "28",
       },
       {
-        date: '29',
+        date: "29",
       },
       {
-        date: '30',
+        date: "30",
       },
       {
-        date: '1',
+        date: "1",
       },
       {
-        date: '2',
+        date: "2",
       },
       {
-        date: '3',
+        date: "3",
       },
     ],
   }),
-}
+};
 </script>

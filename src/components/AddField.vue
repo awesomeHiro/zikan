@@ -60,7 +60,7 @@
   </div>
 </template>
 <script>
-import { genSortToken } from 'plugins/genSortToken'
+import { genSortToken } from "plugins/genSortToken";
 export default {
   props: {
     section: {
@@ -80,50 +80,50 @@ export default {
   data() {
     return {
       showProjects: false,
-      taskname: '',
-      focusedRef: 'taskname',
+      taskname: "",
+      focusedRef: "taskname",
       nameRules: [value => !!value],
       sheet: false,
       sections: this.$store.state.sections.sections,
       sectionSelect: 0,
       projects: this.$store.state.projects.projects,
       projectSelect: 0,
-      estimate: '',
+      estimate: "",
       timeRules: [value => value > 0 && value < 999],
-    }
+    };
   },
   created() {
-    this.sectionSelect = this.sections.findIndex(x => x === this.section)
+    this.sectionSelect = this.sections.findIndex(x => x === this.section);
   },
   methods: {
     focused(ref) {
-      this.focusedRef = ref
-      this.showProjects = true
+      this.focusedRef = ref;
+      this.showProjects = true;
     },
     focusPrevInput() {
-      if (this.focusedRef === 'estimate') {
-        this.$refs.estimate.focus()
+      if (this.focusedRef === "estimate") {
+        this.$refs.estimate.focus();
       } else {
-        this.$refs.taskname.focus()
+        this.$refs.taskname.focus();
       }
     },
     addTask() {
       const payload = {
         sortToken: genSortToken({
           prev:
-            this.$store.getters['tasks/bySectionId'](this.section.id).pop()
-              .sortToken || '',
-          next: '',
+            this.$store.getters["tasks/bySectionId"](this.section.id).pop()
+              .sortToken || "",
+          next: "",
         }),
         name: this.taskname,
         estimate: this.estimate,
         projectId: this.projects[this.projectSelect].id,
         sectionId: this.sections[this.sectionSelect].id,
-      }
-      this.$store.dispatch('tasks/add', payload)
-      this.sheet = false
-      this.calcTasks()
+      };
+      this.$store.dispatch("tasks/add", payload);
+      this.sheet = false;
+      this.calcTasks();
     },
   },
-}
+};
 </script>

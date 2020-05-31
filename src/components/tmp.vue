@@ -27,32 +27,32 @@ export default {
         init: false,
         initialSlide: 1,
         resistanceRatio: 0,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         autoHeight: true,
         spaceBetween: 10,
         on: {
           slideChange: () => {
-            this.$store.commit('meta/setActiveIndex', this.swiper.activeIndex)
-            this.swiper.updateAutoHeight()
+            this.$store.commit("meta/setActiveIndex", this.swiper.activeIndex);
+            this.swiper.updateAutoHeight();
           },
         },
       },
-    }
+    };
   },
   computed: {
     activeIndex() {
-      return this.$store.getters['meta/activeIndex']
+      return this.$store.getters["meta/activeIndex"];
     },
   },
   mounted() {
-    this.$refs.swiper.$swiper.init()
-    this.swiper = this.$refs.swiper.$swiper
+    this.$refs.swiper.$swiper.init();
+    this.swiper = this.$refs.swiper.$swiper;
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import './base.scss';
+@import "./base.scss";
 .swiper {
   .left {
     height: 400px;

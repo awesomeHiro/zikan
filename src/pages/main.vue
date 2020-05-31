@@ -13,9 +13,9 @@
   </div>
 </template>
 <script>
-import left from '~/pages/left.vue'
-import center from '~/pages/center.vue'
-import right from '~/pages/right.vue'
+import left from "~/pages/left.vue";
+import center from "~/pages/center.vue";
+import right from "~/pages/right.vue";
 export default {
   components: {
     left,
@@ -25,16 +25,16 @@ export default {
   computed: {
     currentCarousel: {
       get() {
-        return this.$store.getters['meta/currentCarousel']
+        return this.$store.getters["meta/currentCarousel"];
       },
       set(value) {
-        this.$store.commit('meta/setCurrentCarousel', value)
+        this.$store.commit("meta/setCurrentCarousel", value);
       },
     },
     showArrows() {
-      if (this.currentCarousel === 1) return false
-      return true
+      if (this.currentCarousel === 1) return false;
+      return true;
     },
   },
-}
+};
 </script>

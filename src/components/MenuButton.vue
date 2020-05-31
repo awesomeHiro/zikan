@@ -24,7 +24,7 @@ export default {
     return {
       sheet: false,
       sections: this.$store.state.sections.sections,
-    }
+    };
   },
-}
+};
 </script>

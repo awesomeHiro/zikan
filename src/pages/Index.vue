@@ -1,8 +1,9 @@
 <template>
   <q-page class="flex flex-center">
- </q-page>
+    hello
+  </q-page>
 </template>
 
 <script>
-export default {
+export default {};
 </script>

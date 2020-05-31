@@ -8,7 +8,7 @@
   </v-row>
 </template>
 <script>
-import Doing from '~/components/Doing.vue'
+import Doing from "~/components/Doing.vue";
 // import AddButton from '~/components/AddButton.vue'
 export default {
   components: {
@@ -17,21 +17,21 @@ export default {
   },
   computed: {
     activeIndex() {
-      return this.$store.getters['meta/activeIndex']
+      return this.$store.getters["meta/activeIndex"];
     },
     selectedSection: {
       get() {
-        return this.$store.getters['meta/selectedSection']
+        return this.$store.getters["meta/selectedSection"];
       },
       set(sectionId) {
-        this.$store.commit('meta/setSelectedSection', sectionId)
+        this.$store.commit("meta/setSelectedSection", sectionId);
       },
     },
   },
   methods: {
     calcTasks() {
-      this.$store.dispatch('tasks/updateEstFinishAt')
+      this.$store.dispatch("tasks/updateEstFinishAt");
     },
   },
-}
+};
 </script>

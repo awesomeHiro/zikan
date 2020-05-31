@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "swiper": "^5.4.1",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
@@ -30,9 +32,9 @@
     "nanoid": "^3.1.9"
   },
   "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "npm": "⚠️please-use-yarn⚠️",
+    "yarn": ">= 1.17.3",
+    "node": ">= 12.5.0"
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"

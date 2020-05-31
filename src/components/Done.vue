@@ -31,7 +31,7 @@
             <v-col cols="1" class="pa-0 ma-0">
               <div class="pa-0 ma-0 subtle--text">
                 <span>
-                  {{ $store.getters['sections/byId'](t.sectionId).name }}
+                  {{ $store.getters["sections/byId"](t.sectionId).name }}
                 </span>
               </div>
             </v-col>
@@ -66,7 +66,7 @@
                   {{
                   0 >= t.result - t.estimate
                     ? t.result - t.estimate
-                    : '+' + (t.result - t.estimate)
+                    : "+" + (t.result - t.estimate)
                 }}
               </div>
             </v-col>
@@ -93,17 +93,17 @@ export default {
   data() {
     return {
       sections: this.$store.state.sections.sections,
-    }
+    };
   },
   computed: {
     tasks: {
       get() {
-        return this.$store.getters['tasks/sorted']
+        return this.$store.getters["tasks/sorted"];
       },
       set(payload) {
-        this.$store.dispatch('tasks/updateOrder', payload)
+        this.$store.dispatch("tasks/updateOrder", payload);
       },
     },
   },
-}
+};
 </script>
