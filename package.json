@@ -12,7 +12,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "build:gh-pages": "quasar build",
     "push:gh-pages": "push-dir --dir=dist/spa --branch=gh-pages --cleanup",
-    "deploy:gh-pages": "build:gh-pages push:gh-pages"
+    "deploy": "build:gh-pages push:gh-pages"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
