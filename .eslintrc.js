@@ -39,7 +39,7 @@ module.exports = {
     __statics: true,
     process: true,
     Capacitor: true,
-    chrome: true
+    chrome: tru
   },
 
   // add your custom rules here
@@ -50,8 +50,9 @@ module.exports = {
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "prettier/prettier": ["error",{
-      "trailingComma": 'all'
-    }],
+      "trailingComma": 'all',
+      "endOfLine":"auto"
+    },],
 
     "comma-dangle": [
       "error",
