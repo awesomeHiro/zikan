@@ -13,9 +13,16 @@
 </template>
 
 <script>
-import left from "pages/left.vue";
-import center from "pages/center.vue";
-import right from "pages/right.vue";
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
+// import left from "pages/left.vue";
+// import center from "pages/center.vue";
+// import right from "pages/right.vue";
+import left from "pages/tmp.vue";
+import center from "pages/tmp.vue";
+import right from "pages/tmp.vue";
+
 export default {
   components: {
     left,
@@ -58,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./base.scss";
+@import "assets/base.scss";
 .swiper {
   .swiper-wrapper {
   }
