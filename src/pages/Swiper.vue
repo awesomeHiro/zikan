@@ -1,11 +1,29 @@
 <template>
   <div>
     <swiper class="swiper" :options="swiperOption">
-      <swiper-slide
-        ><q-page>
+      <swiper-slide style="width: 100vw;">
+        <q-page>
           <div class="row">
             <div class="col-12">
               left
+            </div>
+          </div>
+        </q-page>
+      </swiper-slide>
+      <swiper-slide style="width: 100vw;">
+        <q-page>
+          <div class="row">
+            <div class="col-12">
+              center
+            </div>
+          </div>
+        </q-page>
+      </swiper-slide>
+      <swiper-slide style="width: 100vw;">
+        <q-page>
+          <div class="row">
+            <div class="col-12">
+              right
             </div>
           </div>
         </q-page>
