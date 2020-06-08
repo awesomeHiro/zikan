@@ -1,40 +1,22 @@
 <template>
-  <div class="carousel">
-    <v-window
-      v-model="currentCarousel"
-      :continuous="false"
-      :show-arrows="showArrows"
-      hide-delimiters
-    >
-      <v-window-item><left /></v-window-item>
-      <v-window-item><center /></v-window-item>
-      <v-window-item><right /></v-window-item>
-    </v-window>
-  </div>
+  <q-page>
+    <left />
+  </q-page>
 </template>
+
 <script>
-import left from "~/pages/left.vue";
-import center from "~/pages/center.vue";
-import right from "~/pages/right.vue";
+// import Comp from 'components/Progress.vue'
+// import Comp from 'pages/main.vue'
+// import Comp from 'components/leftDrawer.vue'
+// import Comp from "pages/Swiper.vue";
+import left from "pages/tmp/left.vue";
+// import Comp from "components/tmp.vue";
+// import Comp from 'components/firebase/addFieldToFirestoreExample.vue'
+// import Comp from 'components/firebase/addUserExample.vue'
+
 export default {
   components: {
     left,
-    center,
-    right,
-  },
-  computed: {
-    currentCarousel: {
-      get() {
-        return this.$store.getters["meta/currentCarousel"];
-      },
-      set(value) {
-        this.$store.commit("meta/setCurrentCarousel", value);
-      },
-    },
-    showArrows() {
-      if (this.currentCarousel === 1) return false;
-      return true;
-    },
   },
 };
 </script>

@@ -1,89 +1,48 @@
 <template>
-  <swiper ref="swiper" class="swiper" :options="swiperOption">
-    <swiper-slide class="menu left">
-      <left />
-    </swiper-slide>
-    <swiper-slide class="content center">
-      <center />
-    </swiper-slide>
-    <swiper-slide class="menu right">
-      <right />
-    </swiper-slide>
-  </swiper>
+  <div>
+    <swiper class="swiper" :options="swiperOption">
+      <swiper-slide
+        ><q-page>
+          <div class="row">
+            <div class="col-12">
+              left
+            </div>
+          </div>
+        </q-page>
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
-
-// import left from "pages/left.vue";
-// import center from "pages/center.vue";
-// import right from "pages/right.vue";
-import left from "pages/tmp.vue";
-import center from "pages/tmp.vue";
-import right from "pages/tmp.vue";
-
+import left from "pages/tmp/left.vue";
+import center from "pages/tmp/center.vue";
+import right from "pages/tmp/right.vue";
 export default {
+  name: "swiper-example-scrollbar",
+  title: "Scrollbar",
   components: {
-    left,
-    center,
-    right,
+    // left,
+    // center,
+    // right,
+    Swiper,
+    SwiperSlide,
   },
   data() {
     return {
-      menuOpened: false,
-      swiper: {
-        // defalut value to prevent error
-        activeIndex: 1,
-        updateAutoHeight: () => {},
-      },
       swiperOption: {
-        init: false,
-        initialSlide: 1,
-        resistanceRatio: 0,
-        slidesPerView: 1,
-        autoHeight: true,
-        spaceBetween: 10,
-        on: {
-          slideChange: () => {
-            this.$store.commit("meta/setActiveIndex", this.swiper.activeIndex);
-          },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
         },
       },
     };
-  },
-  computed: {
-    activeIndex() {
-      return this.$store.getters["meta/activeIndex"];
-    },
-  },
-  mounted() {
-    this.$refs.swiper.$swiper.init();
-    this.swiper = this.$refs.swiper.$swiper;
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "assets/base.scss";
-.swiper {
-  .swiper-wrapper {
-  }
-  .swiper-container {
-  }
-  .menu {
-    width: 95%;
-    .left {
-    }
-    .right {
-      -webkit-transform: translateX(15%);
-      transform: translateX(15%);
-    }
-  }
-
-  .content {
-    .center {
-    }
-  }
-}
+@import "src/css/swiper.scss";
 </style>
