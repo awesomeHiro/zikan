@@ -11,22 +11,18 @@
         </q-page>
       </swiper-slide>
       <swiper-slide style="width: 100vw;">
-        <q-page>
-          <div class="row">
-            <div class="col-12">
-              center
-            </div>
+        <div class="row">
+          <div class="col-12">
+            center
           </div>
-        </q-page>
+        </div>
       </swiper-slide>
       <swiper-slide style="width: 100vw;">
-        <q-page>
-          <div class="row">
-            <div class="col-12">
-              right
-            </div>
+        <div class="row">
+          <div class="col-12">
+            right
           </div>
-        </q-page>
+        </div>
       </swiper-slide>
     </swiper>
   </div>
